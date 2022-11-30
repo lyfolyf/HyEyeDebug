@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{264019AA-A66B-4C2E-A4C3-71EC1F7AFEAC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HyEye.Services</RootNamespace>
+    <AssemblyName>HyEye.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>false</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=6.3.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Autofac.6.3.0\lib\netstandard2.0\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0-preview.6.22324.4\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.7.1\lib\net45\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.CompilerServices.Unsafe.7.0.0-preview.2.22152.2\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\[Project]\[Lead]\[HyEye]\HyEye\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AcqImage\AcqScheduler.cs" />
+    <Compile Include="AcqImage\AcquireImage.cs" />
+    <Compile Include="Calibration\HandeyeSingleRunner.cs" />
+    <Compile Include="Calibration\HandeyeRunner.cs" />
+    <Compile Include="Calibration\CalibrationServer.cs" />
+    <Compile Include="Calibration\CheckerboardRunner.cs" />
+    <Compile Include="Calibration\JointRunner.cs" />
+    <Compile Include="Command\CommandHeaderType.cs" />
+    <Compile Include="Command\CommandType.cs" />
+    <Compile Include="Command\RecvCommand\CalibCommand.cs" />
+    <Compile Include="Command\RecvCommand\HeartbeatCommand.cs" />
+    <Compile Include="Command\RecvCommand\MaterialCommand.cs" />
+    <Compile Include="Command\RecvCommand\ProcessCommand.cs" />
+    <Compile Include="Command\RecvCommand\ReceiveCommand.cs" />
+    <Compile Include="Command\RecvCommand\ScriptCommand.cs" />
+    <Compile Include="Communication\IVisionCommunication.cs" />
+    <Compile Include="Communication\ICommunicationService.cs" />
+    <Compile Include="Communication\PlcCommunicationService.cs" />
+    <Compile Include="Communication\PLC\PlcCommunication.cs" />
+    <Compile Include="Communication\ReceivedCommandEventArgs.cs" />
+    <Compile Include="Communication\CommandFieldValue.cs" />
+    <Compile Include="Command\CommandServer.cs" />
+    <Compile Include="Command\SendCommand\ErrorCommand.cs" />
+    <Compile Include="Command\SendCommand\IReplyCommand.cs" />
+    <Compile Include="Command\SendCommand\SendCommand.cs" />
+    <Compile Include="Communication\TcpCommunicationService.cs" />
+    <Compile Include="Communication\TCP\TcpCommunication.cs" />
+    <Compile Include="Data\DataServer.cs" />
+    <Compile Include="EventArgs.cs" />
+    <Compile Include="Script\IHyEyeAdvancedScript.cs" />
+    <Compile Include="Script\HyEyeAdvancedScriptBase.cs" />
+    <Compile Include="ServerFactory.cs" />
+    <Compile Include="TaskUtils.cs" />
+    <Compile Include="Command\RecvCommand\TaskCommand.cs" />
+    <Compile Include="Communication\CommunicationServer.cs" />
+    <Compile Include="delegate.cs" />
+    <Compile Include="Image\ImageService.cs" />
+    <Compile Include="AcqImage\LightControllerHandle.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Image\ImageInfo.cs" />
+    <Compile Include="Script\ScriptServer.cs" />
+    <Compile Include="Task\TaskRunner.cs" />
+    <Compile Include="Task\TaskServer.cs" />
+    <Compile Include="ServiceException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\HyCommon\LightControllerSDK\LightControllerSDK.csproj">
+      <Project>{2f509be0-2426-454c-bf40-cfbe637283a9}</Project>
+      <Name>LightControllerSDK</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IVisionSDK\IVisionSDK.csproj">
+      <Project>{95F1AD2F-D0E4-4C33-A894-C3917A793504}</Project>
+      <Name>IVisionSDK</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HyEye.API\HyEye.API.csproj">
+      <Project>{4B8767BD-16B6-4948-AA46-81FF50373C85}</Project>
+      <Name>HyEye.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HyEye.Models\HyEye.Models.csproj">
+      <Project>{ef9fb9d8-1cc6-4a4f-b06d-7f065587e687}</Project>
+      <Name>HyEye.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VisionFactory\VisionFactory.csproj">
+      <Project>{7051e3fb-4566-440c-b129-249a8a1273e0}</Project>
+      <Name>VisionFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VisionProSDK\VisionProSDK.csproj">
+      <Project>{86D7D1AC-6C8F-41D0-91F3-F915EE669C40}</Project>
+      <Name>VisionProSDK</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="备忘.md" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

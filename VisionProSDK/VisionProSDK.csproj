@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{86D7D1AC-6C8F-41D0-91F3-F915EE669C40}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VisionSDK._VisionPro</RootNamespace>
+    <AssemblyName>VisionProSDK</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Cognex.VisionPro">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.CalibFix">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.CalibFix.Controls, processorArchitecture=AMD64">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.CalibFixPlus">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.Controls">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.Core">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.CorePlus" />
+    <Reference Include="Cognex.VisionPro.Database">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.Display.Controls">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.ImageFile, processorArchitecture=AMD64">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.ImageProcessing, processorArchitecture=AMD64" />
+    <Reference Include="Cognex.VisionPro.Inspection">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.Inspection.Controls">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.PMAlign, processorArchitecture=AMD64">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.PMAlign.Controls, processorArchitecture=AMD64">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.ToolGroup">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Cognex.VisionPro.ToolGroup.Controls, processorArchitecture=AMD64">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualC" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Extension\ToolBlockExtension.cs" />
+    <Compile Include="VisionProCalibVerifyComponent.cs" />
+    <Compile Include="VisionProDisplayComponent.cs" />
+    <Compile Include="VisionProCheckerboardComponent.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VisionProHandeyeComponent.cs" />
+    <Compile Include="VisionProHandeyeSingleComponent.cs" />
+    <Compile Include="VisionProJointComponent.cs" />
+    <Compile Include="VisionProToolBlockComponent.cs" />
+    <Compile Include="VisionProExtension.cs" />
+    <Compile Include="VisionProUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IVisionSDK\IVisionSDK.csproj">
+      <Project>{95f1ad2f-d0e4-4c33-a894-c3917a793504}</Project>
+      <Name>IVisionSDK</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HyEye.API\HyEye.API.csproj">
+      <Project>{4B8767BD-16B6-4948-AA46-81FF50373C85}</Project>
+      <Name>HyEye.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HyEye.Models\HyEye.Models.csproj">
+      <Project>{EF9FB9D8-1CC6-4A4F-B06D-7F065587E687}</Project>
+      <Name>HyEye.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Utils\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

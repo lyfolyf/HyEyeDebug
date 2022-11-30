@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\OpenCvSharp4.runtime.win.4.5.5.20211231\build\net48\OpenCvSharp4.runtime.win.props" Condition="Exists('..\..\packages\OpenCvSharp4.runtime.win.4.5.5.20211231\build\net48\OpenCvSharp4.runtime.win.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{30A25CA9-28B5-4EBA-8D87-BD033AE2B617}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HyVision</RootNamespace>
+    <AssemblyName>HyVision</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\..\packages\Autofac.6.3.0\lib\netstandard2.0\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0-preview.6.22324.4\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="OpenCvSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\OpenCvSharp4.4.5.5.20211231\lib\net48\OpenCvSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OpenCvSharp.Extensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\OpenCvSharp4.Extensions.4.5.5.20211231\lib\net48\OpenCvSharp.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="PhaseDeflect">
+      <HintPath>..\..\Ref\PhaseDeflect.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=108.0.2.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\RestSharp.108.0.2-alpha.0.6\lib\netstandard2.0\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Drawing.Common.6.0.2-mauipre.1.22054.8\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.CompilerServices.Unsafe.7.0.0-preview.2.22152.2\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Text.Encodings.Web, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Text.Encodings.Web.7.0.0-preview.6.22324.4\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Text.Json.7.0.0-preview.6.22324.4\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\HyNodeType.cs" />
+    <Compile Include="Controls\ImageCache.cs" />
+    <Compile Include="Controls\EventArgs.cs" />
+    <Compile Include="Controls\HyTreeNode.cs" />
+    <Compile Include="Controls\HyTreeview.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\HyTreeview.Designer.cs">
+      <DependentUpon>HyTreeview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HyVisionUtils.cs" />
+    <Compile Include="Models\Interfaces.cs" />
+    <Compile Include="Tools\BaseHyUserToolEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tools\BaseHyUserToolEdit.Designer.cs">
+      <DependentUpon>BaseHyUserToolEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Classifier\BL\ClassifierBL.cs" />
+    <Compile Include="Tools\Classifier\UI\ClassifierUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tools\Classifier\UI\ClassifierUI.Designer.cs">
+      <DependentUpon>ClassifierUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ImageDisplay\DispalyPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tools\ImageDisplay\EditHyROI\FrmEditHyROI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\ImageDisplay\EditHyROI\FrmEditHyROI.Designer.cs">
+      <DependentUpon>FrmEditHyROI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ImageDisplay\EditHyROI\HyCircleInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tools\ImageDisplay\EditHyROI\HyCircleInfo.Designer.cs">
+      <DependentUpon>HyCircleInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ImageDisplay\EditHyROI\HyEllipseInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tools\ImageDisplay\EditHyROI\HyEllipseInfo.Designer.cs">
+      <DependentUpon>HyEllipseInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ImageDisplay\EditHyROI\HyPolygonInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tools\ImageDisplay\EditHyROI\HyPolygonInfo.Designer.cs">
+      <DependentUpon>HyPolygonInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ImageDisplay\EditHyROI\HyRectangle1Info.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tools\ImageDisplay\EditHyROI\HyRectangle1Info.Designer.cs">
+      <DependentUpon>HyRectangle1Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ImageDisplay\EditHyROI\HySectorInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tools\ImageDisplay\EditHyROI\HySectorInfo.Designer.cs">
+      <DependentUpon>HySectorInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ImageDisplay\HyImageDisplayControlSimple.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tools\ImageDisplay\HyImageDisplayControlSimple.designer.cs">
+      <DependentUpon>HyImageDisplayControlSimple.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ImageDisplay\ROI\HyCircle.cs" />
+    <Compile Include="Tools\ImageDisplay\HyImageDisplayControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tools\ImageDisplay\HyImageDisplayControl.designer.cs">
+      <DependentUpon>HyImageDisplayControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ImageDisplay\ROI\HyDefectRegion.cs" />
+    <Compile Include="Tools\ImageDisplay\ROI\HyDefectXLD.cs" />
+    <Compile Include="Tools\ImageDisplay\ROI\HyEllipse.cs" />
+    <Compile Include="Tools\ImageDisplay\ROI\HyPoints.cs" />
+    <Compile Include="Tools\ImageDisplay\ROI\HyPolygon.cs" />
+    <Compile Include="Tools\ImageDisplay\ROI\HyRectangle2.cs" />
+    <Compile Include="Tools\ImageDisplay\ROI\BaseHyROI.cs" />
+    <Compile Include="Tools\ImageDisplay\ROI\HyROIRepository.cs" />
+    <Compile Include="Tools\ImageDisplay\ROI\HySector.cs" />
+    <Compile Include="Tools\ImageDisplay\ROI\HyRectangle1.cs" />
+    <Compile Include="Tools\ImageProcess\ImageProcessTool.cs" />
+    <Compile Include="Tools\ImageProcess\ImageProcessUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tools\ImageProcess\ImageProcessUI.Designer.cs">
+      <DependentUpon>ImageProcessUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ImageSave\ImageSaveTool.cs" />
+    <Compile Include="Tools\ImageSave\ImageSaveToolUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tools\ImageSave\ImageSaveToolUI.Designer.cs">
+      <DependentUpon>ImageSaveToolUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\PhaseDeflection\BL\PhaseDeflectionBL.cs" />
+    <Compile Include="Tools\PhaseDeflection\UI\PhaseDeflectionUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tools\PhaseDeflection\UI\PhaseDeflectionUI.Designer.cs">
+      <DependentUpon>PhaseDeflectionUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\TerminalCollection\HyTerminalCollectionEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tools\TerminalCollection\HyTerminalCollectionEdit.Designer.cs">
+      <DependentUpon>HyTerminalCollectionEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\FrmShowTool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\FrmShowTool.Designer.cs">
+      <DependentUpon>FrmShowTool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\IHyUserToolEdit.cs" />
+    <Compile Include="Tools\ThridLib\HyThridLibToolEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tools\ThridLib\HyThridLibToolEdit.Designer.cs">
+      <DependentUpon>HyThridLibToolEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HyExceptionEventArgs.cs" />
+    <Compile Include="HySerializer.cs" />
+    <Compile Include="IHyCollection.cs" />
+    <Compile Include="Models\BaseHyCollection.cs" />
+    <Compile Include="Models\HyImage.cs" />
+    <Compile Include="Models\HyToolResultConstants.cs" />
+    <Compile Include="Models\HyRunStatus.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\BaseHyUserTool.cs" />
+    <Compile Include="Tools\ThridLib\HyThridLibTool.cs" />
+    <Compile Include="Tools\HyToolCollection.cs" />
+    <Compile Include="Tools\IHyUserTool.cs" />
+    <Compile Include="Models\HyTerminal.cs" />
+    <Compile Include="Tools\TerminalCollection\HyTerminalCollection.cs" />
+    <Compile Include="Tools\ToolBlock\HyToolBlock.cs" />
+    <Compile Include="Tools\ToolBlock\HyToolBlockEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tools\ToolBlock\HyToolBlockEdit.Designer.cs">
+      <DependentUpon>HyToolBlockEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HyVisionException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\ToolBox\HyToolboxForm.cs" />
+    <Compile Include="Tools\ToolBox\HyToolboxForm.Designer.cs">
+      <DependentUpon>HyToolboxForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\XMLEdit\BL\XMLEditBL.cs" />
+    <Compile Include="Tools\XMLEdit\DA\XMLEditUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tools\XMLEdit\DA\XMLEditUI.Designer.cs">
+      <DependentUpon>XMLEditUI.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\HyTreeview.resx">
+      <DependentUpon>HyTreeview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\BaseHyUserToolEdit.resx">
+      <DependentUpon>BaseHyUserToolEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Classifier\UI\ClassifierUI.resx">
+      <DependentUpon>ClassifierUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\ImageDisplay\EditHyROI\FrmEditHyROI.resx">
+      <DependentUpon>FrmEditHyROI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\ImageDisplay\EditHyROI\HyCircleInfo.resx">
+      <DependentUpon>HyCircleInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\ImageDisplay\EditHyROI\HyEllipseInfo.resx">
+      <DependentUpon>HyEllipseInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\ImageDisplay\EditHyROI\HyPolygonInfo.resx">
+      <DependentUpon>HyPolygonInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\ImageDisplay\EditHyROI\HyRectangle1Info.resx">
+      <DependentUpon>HyRectangle1Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\ImageDisplay\EditHyROI\HySectorInfo.resx">
+      <DependentUpon>HySectorInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\ImageDisplay\HyImageDisplayControl.resx">
+      <DependentUpon>HyImageDisplayControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\ImageDisplay\HyImageDisplayControlSimple.resx">
+      <DependentUpon>HyImageDisplayControlSimple.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\ImageProcess\ImageProcessUI.resx">
+      <DependentUpon>ImageProcessUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\ImageSave\ImageSaveToolUI.resx">
+      <DependentUpon>ImageSaveToolUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\PhaseDeflection\UI\PhaseDeflectionUI.resx">
+      <DependentUpon>PhaseDeflectionUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\TerminalCollection\HyTerminalCollectionEdit.resx">
+      <DependentUpon>HyTerminalCollectionEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\FrmShowTool.resx">
+      <DependentUpon>FrmShowTool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\ToolBlock\HyToolBlockEdit.resx">
+      <DependentUpon>HyToolBlockEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\ThridLib\HyThridLibToolEdit.resx">
+      <DependentUpon>HyThridLibToolEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\ToolBox\HyToolboxForm.resx">
+      <DependentUpon>HyToolboxForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\XMLEdit\DA\XMLEditUI.resx">
+      <DependentUpon>XMLEditUI.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HyEye.API\HyEye.API.csproj">
+      <Project>{4b8767bd-16b6-4948-aa46-81ff50373c85}</Project>
+      <Name>HyEye.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HyRoiManager\HyRoiManager.csproj">
+      <Project>{9b0c7f2f-193a-46bd-9611-ec7fd4eee617}</Project>
+      <Name>HyRoiManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IVisionSDK\IVisionSDK.csproj">
+      <Project>{95f1ad2f-d0e4-4c33-a894-c3917a793504}</Project>
+      <Name>IVisionSDK</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="app.manifest" />
+    <EmbeddedResource Include="Image\HyThridLibTool" />
+    <EmbeddedResource Include="Image\Input" />
+    <EmbeddedResource Include="Image\Output" />
+    <None Include="packages.config" />
+    <None Include="Resources\下 移.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\上 移.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\删除筛选项.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\新增.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\运行.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\打开.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\保存.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\工具箱.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tools\PhaseDeflection\DA\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\OpenCvSharp4.runtime.win.4.5.5.20211231\build\net48\OpenCvSharp4.runtime.win.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\OpenCvSharp4.runtime.win.4.5.5.20211231\build\net48\OpenCvSharp4.runtime.win.props'))" />
+  </Target>
+</Project>

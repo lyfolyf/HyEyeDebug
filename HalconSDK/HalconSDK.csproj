@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{22EF2F30-08A9-413E-B6F6-A6812431CC30}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HalconSDK</RootNamespace>
+    <AssemblyName>HalconSDK</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\..\packages\Autofac.6.3.0\lib\netstandard2.0\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="halcondotnet">
+      <HintPath>..\..\Ref\halcondotnet.dll</HintPath>
+    </Reference>
+    <Reference Include="hdevenginedotnet">
+      <HintPath>..\..\Ref\hdevenginedotnet.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\..\Ref\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>..\..\Ref\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>..\..\Ref\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>..\..\Ref\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="PhaseDeflect, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Ref\PhaseDeflect.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataReport\BL\HalconDataReportGeneraterBL.cs" />
+    <Compile Include="DataReport\UI\HalconDataReportGeneraterUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DataReport\UI\HalconDataReportGeneraterUI.Designer.cs">
+      <DependentUpon>HalconDataReportGeneraterUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Engine\BL\HalconEngineManager.cs" />
+    <Compile Include="Engine\BL\HalconEngineTool.cs" />
+    <Compile Include="Engine\BL\HalconProcedureEngineBL.cs" />
+    <Compile Include="Engine\BL\HalconProgramEngineBL_2.cs" />
+    <Compile Include="Engine\BL\ParameterInfo.cs" />
+    <Compile Include="Engine\BL\SettingsBL.cs" />
+    <Compile Include="Engine\DA\HyHalconTerminal.cs" />
+    <Compile Include="Engine\UI\FrmSelectROI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Engine\UI\FrmSelectROI.Designer.cs">
+      <DependentUpon>FrmSelectROI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Engine\UI\FrmHyROIList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Engine\UI\FrmHyROIList.Designer.cs">
+      <DependentUpon>FrmHyROIList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Engine\UI\FrmHyROISeting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Engine\UI\FrmHyROISeting.Designer.cs">
+      <DependentUpon>FrmHyROISeting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Engine\UI\FrmImageSeting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Engine\UI\FrmImageSeting.Designer.cs">
+      <DependentUpon>FrmImageSeting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Engine\UI\HalconEngineTool_UI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Engine\UI\HalconEngineTool_UI.Designer.cs">
+      <DependentUpon>HalconEngineTool_UI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Engine\UI\HalconEngineUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Engine\UI\HalconEngineUI.Designer.cs">
+      <DependentUpon>HalconEngineUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Engine\UI\HalconEngineUI_1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Engine\UI\HalconEngineUI_1.Designer.cs">
+      <DependentUpon>HalconEngineUI_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Engine\UI\HalconEngineUI_2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Engine\UI\HalconEngineUI_2.Designer.cs">
+      <DependentUpon>HalconEngineUI_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Engine\UI\HyCircleInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Engine\UI\HyCircleInfo.Designer.cs">
+      <DependentUpon>HyCircleInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Engine\UI\HyPointsInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Engine\UI\HyPointsInfo.Designer.cs">
+      <DependentUpon>HyPointsInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Engine\UI\HyPolygonInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Engine\UI\HyPolygonInfo.Designer.cs">
+      <DependentUpon>HyPolygonInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Engine\UI\HyRectangle2Info.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Engine\UI\HyRectangle2Info.Designer.cs">
+      <DependentUpon>HyRectangle2Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Engine\UI\HyRectangle1Info.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Engine\UI\HyRectangle1Info.Designer.cs">
+      <DependentUpon>HyRectangle1Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Engine\UI\HyROIOperation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Engine\UI\HyROIOperation.Designer.cs">
+      <DependentUpon>HyROIOperation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HalconDataConvert.cs" />
+    <Compile Include="Engine\BL\HalconProgramEngineBL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="HalconSupportDataTypes.cs" />
+    <Compile Include="Properties\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HyEye.API\HyEye.API.csproj">
+      <Project>{4B8767BD-16B6-4948-AA46-81FF50373C85}</Project>
+      <Name>HyEye.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HyEye.Service\HyEye.Service.csproj">
+      <Project>{264019aa-a66b-4c2e-a4c3-71ec1f7afeac}</Project>
+      <Name>HyEye.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HyRoiManager\HyRoiManager.csproj">
+      <Project>{9b0c7f2f-193a-46bd-9611-ec7fd4eee617}</Project>
+      <Name>HyRoiManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HyVision.Controls\HyVision.csproj">
+      <Project>{30a25ca9-28b5-4eba-8d87-bd033ae2b617}</Project>
+      <Name>HyVision</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Engine\UI\FrmSelectROI.resx">
+      <DependentUpon>FrmSelectROI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Engine\UI\FrmHyROIList.resx">
+      <DependentUpon>FrmHyROIList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Engine\UI\FrmHyROISeting.resx">
+      <DependentUpon>FrmHyROISeting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Engine\UI\FrmImageSeting.resx">
+      <DependentUpon>FrmImageSeting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Engine\UI\HalconEngineTool_UI.resx">
+      <DependentUpon>HalconEngineTool_UI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Engine\UI\HalconEngineUI.resx">
+      <DependentUpon>HalconEngineUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Engine\UI\HalconEngineUI_1.resx">
+      <DependentUpon>HalconEngineUI_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Engine\UI\HalconEngineUI_2.resx">
+      <DependentUpon>HalconEngineUI_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Engine\UI\HyCircleInfo.resx">
+      <DependentUpon>HyCircleInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Engine\UI\HyPointsInfo.resx">
+      <DependentUpon>HyPointsInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Engine\UI\HyPolygonInfo.resx">
+      <DependentUpon>HyPolygonInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Engine\UI\HyRectangle2Info.resx">
+      <DependentUpon>HyRectangle2Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Engine\UI\HyRectangle1Info.resx">
+      <DependentUpon>HyRectangle1Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Engine\UI\HyROIOperation.resx">
+      <DependentUpon>HyROIOperation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataReport\DA\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Resources\ToDown.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

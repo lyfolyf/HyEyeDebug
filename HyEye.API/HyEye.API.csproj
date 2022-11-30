@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4B8767BD-16B6-4948-AA46-81FF50373C85}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HyEye.API</RootNamespace>
+    <AssemblyName>HyEye.API</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config\ApiConfig.cs" />
+    <Compile Include="Config\CalibrationConfig.cs" />
+    <Compile Include="Config\CalibrationVerifyConfig.cs" />
+    <Compile Include="Config\CameraConfig.cs" />
+    <Compile Include="Config\CommandConfig.cs" />
+    <Compile Include="Config\CommunicationConfig.cs" />
+    <Compile Include="Config\DataConfig.cs" />
+    <Compile Include="Config\DisplayLayoutConfig.cs" />
+    <Compile Include="Config\DisplayType.cs" />
+    <Compile Include="Config\ImageConfig.cs" />
+    <Compile Include="Config\LightControllerConfig.cs" />
+    <Compile Include="Config\LogConfig.cs" />
+    <Compile Include="Config\MaterialConfig.cs" />
+    <Compile Include="Config\OpticsConfig.cs" />
+    <Compile Include="Config\PlcSettings.cs" />
+    <Compile Include="Config\RecordShowConfig.cs" />
+    <Compile Include="Config\SystemConfig.cs" />
+    <Compile Include="Config\PermissionList.cs" />
+    <Compile Include="Config\SetupConfig.cs" />
+    <Compile Include="Config\TaskConfig.cs" />
+    <Compile Include="Config\TaskVisionMappingConfig.cs" />
+    <Compile Include="Config\UserBlockConfig.cs" />
+    <Compile Include="Config\UserList.cs" />
+    <Compile Include="ControllerCollection.cs" />
+    <Compile Include="GlobalParams.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\CalibrationRepository.cs" />
+    <Compile Include="Repository\CalibrationVerifyRepository.cs" />
+    <Compile Include="Repository\CameraRepository.cs" />
+    <Compile Include="Repository\CommandRepository.cs" />
+    <Compile Include="Repository\CommunicationRepository.cs" />
+    <Compile Include="Repository\DataRepository.cs" />
+    <Compile Include="Repository\delegate.cs" />
+    <Compile Include="Repository\DisplayLayoutRepository.cs" />
+    <Compile Include="Repository\ImageSaveRepository.cs" />
+    <Compile Include="Repository\LightControllerRepository.cs" />
+    <Compile Include="Repository\MaterialRepository.cs" />
+    <Compile Include="Repository\PathRepository.cs" />
+    <Compile Include="Repository\PermissionRepository.cs" />
+    <Compile Include="Repository\PlcRepository.cs" />
+    <Compile Include="Repository\RecordShowRepository.cs" />
+    <Compile Include="Repository\SimulationRepository.cs" />
+    <Compile Include="Repository\LogConfigRepository.cs" />
+    <Compile Include="Repository\OpticsRepository.cs" />
+    <Compile Include="Repository\SystemRepository.cs" />
+    <Compile Include="Repository\TaskRepository.cs" />
+    <Compile Include="Repository\UserBlockRepository.cs" />
+    <Compile Include="Repository\UserRepository.cs" />
+    <Compile Include="Repository\NameMappingRepository.cs" />
+    <Compile Include="ApiException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\HyCommon\LightControllerSDK\LightControllerSDK.csproj">
+      <Project>{2f509be0-2426-454c-bf40-cfbe637283a9}</Project>
+      <Name>LightControllerSDK</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IVisionSDK\IVisionSDK.csproj">
+      <Project>{95F1AD2F-D0E4-4C33-A894-C3917A793504}</Project>
+      <Name>IVisionSDK</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HyEye.Models\HyEye.Models.csproj">
+      <Project>{EF9FB9D8-1CC6-4A4F-B06D-7F065587E687}</Project>
+      <Name>HyEye.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
